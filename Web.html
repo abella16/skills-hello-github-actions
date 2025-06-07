@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Web Development Quiz by Abel Tesfaye</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+        Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    main {
+      background: #fff;
+      max-width: 720px;
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+      padding: 2rem 3rem 3rem 3rem;
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 2.25rem;
+      color: #2c2c2c;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+
+    form {
+      user-select: none;
+    }
+
+    .question {
+      margin-bottom: 1.8rem;
+      padding: 1.2rem 1.5rem;
+      border-radius: 10px;
+      border: 1.5px solid #ddd;
+      transition: border-color 0.3s ease, background-color 0.3s ease;
+      background-color: #fafafa;
+    }
+    .question:hover {
+      border-color: #1e40af;
+      background-color: #f0f4ff;
+    }
+
+    .question p {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 1rem;
+      color: #2c2c2c;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      font-weight: 500;
+      color: #555;
+      padding: 0.35rem 0.5rem;
+      border-radius: 6px;
+      transition: background-color 0.2s ease, color 0.2s ease;
+      user-select: none;
+    }
+    label:hover {
+      background-color: #dbe3ff;
+      color: #1e40af;
+    }
+
+    input[type="radio"] {
+      margin-right: 12px;
+      accent-color: #1e40af;
+      width: 18px;
+      height: 18px;
+    }
+
+    .correct {
+      background-color: #d1e7dd !important;
+      border-left: 4px solid #28a745 !important;
+      color: #155724 !important;
+    }
+    .wrong {
+      background-color: #f8d7da !important;
+      border-left: 4px solid #dc3545 !important;
+      color: #721c24 !important;
+    }
+
+    #submitBtn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: white;
+      background: linear-gradient(90deg, #1e40af, #4338ca);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(30,64,175,0.7);
+      transition: background 0.3s ease;
+      margin-top: 0.5rem;
+    }
+    #submitBtn:hover {
+      background: linear-gradient(90deg, #4338ca, #1e40af);
+    }
+    #submitBtn:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px #a3bffa;
+    }
+
+    #result {
+      margin-top: 1.5rem;
+      padding: 1rem;
+      border-radius: 10px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      text-align: center;
+      color: #fff;
+      background: #28a745;
+      box-shadow: 0 4px 12px rgba(40,167,69,0.7);
+      user-select: none;
+    }
+
+    .footer {
+      margin-top: 2.8rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #777;
+      font-style: italic;
+      user-select: none;
+    }
+
+    @media (max-width: 480px) {
+      main {
+        padding: 1.5rem 1.8rem 2.5rem 1.8rem;
+      }
+      h1 {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Web Development Quiz</h1>
+    <form id="quizForm" novalidate>
+      <!-- Question 1 -->
+      <section class="question" data-answer="b">
+        <p>1. What does HTML stand for?</p>
+        <label><input type="radio" name="q1" value="a" /> Hyperlinks and Text Markup Language</label>
+        <label><input type="radio" name="q1" value="b" /> HyperText Markup Language</label>
+        <label><input type="radio" name="q1" value="c" /> Home Tool Markup Language</label>
+        <label><input type="radio" name="q1" value="d" /> Hyperlinking Text Marking Language</label>
+      </section>
+
+      <!-- Question 2 -->
+      <section class="question" data-answer="c">
+        <p>2. Which HTML tag is used to define an unordered list?</p>
+        <label><input type="radio" name="q2" value="a" /> &lt;ol&gt;</label>
+        <label><input type="radio" name="q2" value="b" /> &lt;ul&gt;</label>
+        <label><input type="radio" name="q2" value="c" /> &lt;ul&gt;</label>
+        <label><input type="radio" name="q2" value="d" /> &lt;li&gt;</label>
+      </section>
+
+      <!-- Question 3 -->
+      <section class="question" data-answer="a">
+        <p>3. Which property is used to change the background color in CSS?</p>
+        <label><input type="radio" name="q3" value="a" /> background-color</label>
+        <label><input type="radio" name="q3" value="b" /> color</label>
+        <label><input type="radio" name="q3" value="c" /> bgcolor</label>
+        <label><input type="radio" name="q3" value="d" /> bg-color</label>
+      </section>
+
+      <!-- Question 4 -->
+      <section class="question" data-answer="d">
+        <p>4. How do you select an element with id "header" in CSS?</p>
+        <label><input type="radio" name="q4" value="a" /> .header</label>
+        <label><input type="radio" name="q4" value="b" /> header</label>
+        <label><input type="radio" name="q4" value="c" /> *header</label>
+        <label><input type="radio" name="q4" value="d" /> #header</label>
+      </section>
+
+      <!-- Question 5 -->
+      <section class="question" data-answer="b">
+        <p>5. Inside which HTML element do we put the JavaScript?</p>
+        <label><input type="radio" name="q5" value="a" /> &lt;js&gt;</label>
+        <label><input type="radio" name="q5" value="b" /> &lt;script&gt;</label>
+        <label><input type="radio" name="q5" value="c" /> &lt;javascript&gt;</label>
+        <label><input type="radio" name="q5" value="d" /> &lt;scripting&gt;</label>
+      </section>
+
+      <!-- Question 6 -->
+      <section class="question" data-answer="a">
+        <p>6. What does CSS stand for?</p>
+        <label><input type="radio" name="q6" value="a" /> Cascading Style Sheets</label>
+        <label><input type="radio" name="q6" value="b" /> Computer Style Sheets</label>
+        <label><input type="radio" name="q6" value="c" /> Creative Style System</label>
+        <label><input type="radio" name="q6" value="d" /> Colorful Style Sheets</label>
+      </section>
+
+      <!-- Question 7 -->
+      <section class="question" data-answer="d">
+        <p>7. Which JavaScript keyword declares a variable that cannot be reassigned?</p>
+        <label><input type="radio" name="q7" value="a" /> var</label>
+        <label><input type="radio" name="q7" value="b" /> let</label>
+        <label><input type="radio" name="q7" value="c" /> constant</label>
+        <label><input type="radio" name="q7" value="d" /> const</label>
+      </section>
+
+      <!-- Question 8 -->
+      <section class="question" data-answer="c">
+        <p>8. How do you write a comment in JavaScript?</p>
+        <label><input type="radio" name="q8" value="a" /> &lt;!-- This is a comment --&gt;</label>
+        <label><input type="radio" name="q8" value="b" /> // This is a comment</label>
+        <label><input type="radio" name="q8" value="c" /> // This is a comment</label>
+        <label><input type="radio" name="q8" value="d" /> ** This is a comment **</label>
+      </section>
+
+      <!-- Question 9 -->
+      <section class="question" data-answer="a">
+        <p>9. Which HTML attribute is used to define inline styles?</p>
+        <label><input type="radio" name="q9" value="a" /> style</label>
+        <label><input type="radio" name="q9" value="b" /> class</label>
+        <label><input type="radio" name="q9" value="c" /> styles</label>
+        <label><input type="radio" name="q9" value="d" /> css</label>
+      </section>
+
+      <!-- Question 10 -->
+      <section class="question" data-answer="b">
+        <p>10. Which method is used to add an element at the end of an array in JavaScript?</p>
+        <label><input type="radio" name="q10" value="a" /> pop()</label>
+        <label><input type="radio" name="q10" value="b" /> push()</label>
+        <label><input type="radio" name="q10" value="c" /> shift()</label>
+        <label><input type="radio" name="q10" value="d" /> unshift()</label>
+      </section>
+
+      <button type="submit" id="submitBtn">Submit Answers</button>
+    </form>
+
+    <div id="result" role="alert" aria-live="polite" style="display:none;"></div>
+    <p class="footer">Created by Abel Tesfaye</p>
+  </main>
+
+  <script>
+    document.getElementById('quizForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const questions = document.querySelectorAll('.question');
+      let correctCount = 0;
+
+      questions.forEach(question => {
+        // Clear previous classes
+        question.classList.remove('correct', 'wrong');
+
+        const correctAnswer = question.getAttribute('data-answer');
+        const options = question.querySelectorAll('input[type="radio"]');
+        let userAnswer = null;
+
+        options.forEach(option => {
+          if(option.checked) userAnswer = option.value;
+        });
+
+        if(userAnswer === correctAnswer) {
+          question.classList.add('correct');
+          correctCount++;
+        } else {
+          question.classList.add('wrong');
+        }
+      });
+
+      const resultDiv = document.getElementById('result');
+      resultDiv.style.display = 'block';
+      resultDiv.textContent = `You got ${correctCount} out of ${questions.length} correct!`;
+    });
+  </script>
+</body>
+                 </html>
